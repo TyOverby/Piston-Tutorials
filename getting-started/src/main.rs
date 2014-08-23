@@ -1,9 +1,9 @@
 extern crate graphics;
 extern crate piston;
-extern crate glfw_game_window;
+extern crate sdl2_game_window;
 extern crate opengl_graphics;
 
-use glfw_game_window::GameWindowGLFW as Window;
+use sdl2_game_window::GameWindowSDL2 as Window;
 use opengl_graphics::Gl;
 
 use piston::{
@@ -51,9 +51,9 @@ impl<W: GameWindow> App {
 }
 
 fn main() {
-    // Create a GLFW window.
+    // Create an SDL window.
     let mut window = Window::new(
-        piston::shader_version::opengl::OpenGL_3_2,
+        piston::shader_version::opengl::OpenGL_2_1,
         piston::GameWindowSettings {
             title: "Hello Piston".to_string(),
             size: [800, 800],
